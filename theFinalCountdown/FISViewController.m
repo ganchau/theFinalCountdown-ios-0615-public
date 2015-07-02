@@ -42,11 +42,13 @@
     self.timerPicker.hidden = !self.timerPicker.hidden;
     
     if ([button.titleLabel.text isEqualToString:@"Start"]) {
-        [button setTitle:@"Cancel" forState:UIControlStateNormal];
+        [button setTitle:@"Stop" forState:UIControlStateNormal];
+        [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        button.layer.borderColor = [[UIColor redColor] CGColor];
+
         self.pauseButton.enabled = YES;
         self.isStarted = YES;
         self.seconds = [@(self.timerPicker.countDownDuration) intValue];
-        //self.timerLabel.text = [NSString stringWithFormat:@"%d", self.seconds];
         [self displayTime];
         
         self.countDownTimer = [NSTimer scheduledTimerWithTimeInterval:1.00
@@ -57,6 +59,9 @@
         
     } else {
         [button setTitle:@"Start" forState:UIControlStateNormal];
+        [button setTitleColor:[UIColor colorWithRed:0 green:122.0/255.0 blue:1 alpha:1] forState:UIControlStateNormal];
+        button.layer.borderColor = [[UIColor colorWithRed:0 green:122.0/255.0 blue:1 alpha:1] CGColor];
+        
         self.pauseButton.enabled = NO;
         self.isStarted = NO;
         self.seconds = 0;
