@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8Xc-FA-NWb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8Xc-FA-NWb">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--View Controller - Timer-->
+        <!--Timer-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="FISViewController" sceneMemberID="viewController">
@@ -13,65 +16,103 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e5g-VY-d7z">
-                                <rect key="frame" x="70" y="332" width="33" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Start">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G61-zh-9P3">
-                                <rect key="frame" x="209" y="332" width="43" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Pause">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t0q-ZD-j8N">
-                                <rect key="frame" x="0.0" y="63" width="320" height="162"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zoa-GO-yLn" userLabel="Bottom Container">
+                                <rect key="frame" x="0.0" y="300" width="600" height="300"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G61-zh-9P3">
+                                        <rect key="frame" x="380" y="110" width="80" height="80"/>
+                                        <color key="backgroundColor" red="0.92698413889999998" green="0.92698413889999998" blue="0.92698413889999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="4xS-ZM-eCs"/>
+                                            <constraint firstAttribute="height" constant="80" id="S1Q-EM-K3Y"/>
+                                        </constraints>
+                                        <state key="normal" title="Pause">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pauseButtonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="JcI-KF-3tU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e5g-VY-d7z">
+                                        <rect key="frame" x="140" y="110" width="80" height="80"/>
+                                        <color key="backgroundColor" red="0.92698413889999998" green="0.92698413889999998" blue="0.92698413889999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="Up6-7C-0Pp"/>
+                                            <constraint firstAttribute="height" constant="80" id="wXU-w5-o2P"/>
+                                        </constraints>
+                                        <state key="normal" title="Start">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="startButtonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="7uv-jR-rUF"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.90509673813650804" green="0.90509673813650804" blue="0.90509673813650804" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerY" secondItem="e5g-VY-d7z" secondAttribute="centerY" id="5qh-9n-m2w"/>
+                                    <constraint firstAttribute="centerY" secondItem="G61-zh-9P3" secondAttribute="centerY" id="adf-U1-wGa"/>
+                                    <constraint firstItem="e5g-VY-d7z" firstAttribute="centerX" secondItem="zoa-GO-yLn" secondAttribute="centerX" multiplier="0.6" id="ern-2x-CW5"/>
+                                    <constraint firstItem="G61-zh-9P3" firstAttribute="centerX" secondItem="zoa-GO-yLn" secondAttribute="centerX" multiplier="1.4" id="pvI-ZN-TD3"/>
+                                </constraints>
+                            </view>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t0q-ZD-j8N">
+                                <rect key="frame" x="60" y="74" width="480" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="426600068.10878801">
                                     <!--2014-07-09 12:01:08 +0000-->
                                 </date>
-                                <timeZone key="timeZone" name="America/Los_Angeles">
-                                    <data key="data">
-VFppZgAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAC5AAAABAAAABCepkign7sVkKCGKqChmveQ
-y4kaoNIj9HDSYSYQ1v50INiArZDa/tGg28CQENzes6DdqayQ3r6VoN+JjpDgnneg4WlwkOJ+WaDjSVKQ
-5F47oOUpNJDmR1gg5xJREOgnOiDo8jMQ6gccIOrSFRDr5v4g7LH3EO3G4CDukdkQ76/8oPBxuxDxj96g
-8n/BkPNvwKD0X6OQ9U+ioPY/hZD3L4Sg+CiiEPkPZqD6CIQQ+viDIPvoZhD82GUg/chIEP64RyD/qCoQ
-AJgpIAGIDBACeAsgA3EokARhJ6AFUQqQBkEJoAcw7JAHjUOgCRDOkAmtvyAK8LCQC+CvoAzZzRANwJGg
-DrmvEA+priAQmZEQEYmQIBJ5cxATaXIgFFlVEBVJVCAWOTcQFyk2IBgiU5AZCRggGgI1kBryNKAb4heQ
-HNIWoB3B+ZAesfigH6HbkCB2KyAhgb2QIlYNICNq2hAkNe8gJUq8ECYV0SAnKp4QJ/7toCkKgBAp3s+g
-KupiECu+saAs036QLZ6ToC6zYJAvfnWgMJNCkDFnkiAycySQM0d0IDRTBpA1J1YgNjLokDcHOCA4HAUQ
-OOcaIDn75xA6xvwgO9vJEDywGKA9u6sQPo/6oD+bjRBAb9ygQYSpkEJPvqBDZIuQRC+goEVEbZBF89Mg
-Ry2KEEfTtSBJDWwQSbOXIErtThBLnLOgTNZqkE18laBOtkyQT1x3oFCWLpBRPFmgUnYQkFMcO6BUVfKQ
-VPwdoFY11JBW5TogWB7xEFjFHCBZ/tMQWqT+IFvetRBchOAgXb6XEF5kwiBfnnkQYE3eoGGHlZBiLcCg
-Y2d3kGQNoqBlR1mQZe2EoGcnO5BnzWagaQcdkGmtSKBq5v+Qa5ZlIGzQHBBtdkcgbq/+EG9WKSBwj+AQ
-cTYLIHJvwhBzFe0gdE+kEHT/CaB2OMCQdt7roHgYopB4vs2gefiEkHqer6B72GaQfH6RoH24SJB+XnOg
-f5gqkAABAAECAwEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
-AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
-AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
-AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
-</data>
-                                </timeZone>
                             </datePicker>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ACg-uO-YjG">
-                                <rect key="frame" x="0.0" y="63" width="320" height="156"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="195"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ACg-uO-YjG">
+                                <rect key="frame" x="16" y="64" width="568" height="236"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="60"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="ACg-uO-YjG" secondAttribute="bottom" constant="64" id="2ll-pF-usd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ACg-uO-YjG" secondAttribute="trailing" id="31V-82-4f3"/>
+                            <constraint firstItem="t0q-ZD-j8N" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="96x-SY-elV"/>
+                            <constraint firstItem="zoa-GO-yLn" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="IL4-Xw-BlP"/>
+                            <constraint firstItem="t0q-ZD-j8N" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailing" constant="-60" id="OMD-L8-cNt"/>
+                            <constraint firstItem="t0q-ZD-j8N" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="60" id="PzJ-Hu-7Fp"/>
+                            <constraint firstItem="ACg-uO-YjG" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="RM4-qk-SsA"/>
+                            <constraint firstItem="zoa-GO-yLn" firstAttribute="height" secondItem="kh9-bI-dsS" secondAttribute="height" multiplier="0.5" id="T6a-7d-Bcz"/>
+                            <constraint firstItem="zoa-GO-yLn" firstAttribute="top" secondItem="t0q-ZD-j8N" secondAttribute="bottom" id="ZjX-RS-0Ue"/>
+                            <constraint firstItem="ACg-uO-YjG" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="dhx-wq-n8c"/>
+                            <constraint firstItem="zoa-GO-yLn" firstAttribute="top" secondItem="ACg-uO-YjG" secondAttribute="bottom" id="hbe-05-325"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="zoa-GO-yLn" secondAttribute="bottom" id="rnq-rJ-pnL"/>
+                            <constraint firstAttribute="trailing" secondItem="zoa-GO-yLn" secondAttribute="trailing" id="vYY-Om-XHn"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="2ll-pF-usd"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="subviews">
+                                <exclude reference="zoa-GO-yLn"/>
+                                <exclude reference="t0q-ZD-j8N"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="2ll-pF-usd"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Timer" id="GXH-0Z-DV3"/>
+                    <connections>
+                        <outlet property="pauseButton" destination="G61-zh-9P3" id="1IE-by-vcX"/>
+                        <outlet property="startButton" destination="e5g-VY-d7z" id="14a-Kb-2NK"/>
+                        <outlet property="timerLabel" destination="ACg-uO-YjG" id="2z7-vb-9k5"/>
+                        <outlet property="timerPicker" destination="t0q-ZD-j8N" id="pAS-NW-J6c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="820" y="124"/>
+            <point key="canvasLocation" x="1537" y="129"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2D5-GC-0uk">
@@ -89,12 +130,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5a6-eB-VPl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="282" y="129"/>
+            <point key="canvasLocation" x="528.75" y="136.26760563380282"/>
         </scene>
     </scenes>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
 </document>
